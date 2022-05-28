@@ -32,6 +32,21 @@ function decorator3() {
         console.log(descriptor);
     };
 }
+function classDecorator(constructor) {
+    console.log("Executando classDecorator...");
+    console.log(constructor);
+}
+var User = /** @class */ (function () {
+    function User(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+    User = __decorate([
+        classDecorator
+    ], User);
+    return User;
+}());
 var Carro = /** @class */ (function () {
     function Carro() {
     }
@@ -45,5 +60,6 @@ var Carro = /** @class */ (function () {
     ], Carro.prototype, "vrum", null);
     return Carro;
 }());
-var c1 = new Carro();
-c1.vrum();
+// const c1 = new Carro();
+// c1.vrum();
+var u1 = new User("Luke", 54, "developer");
