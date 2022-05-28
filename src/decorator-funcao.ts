@@ -43,17 +43,6 @@ function decorator3() {
   };
 }
 
-function classDecorator(constructor: Function) {
-  console.log("Executando classDecorator...");
-
-  console.log(constructor);
-}
-
-@classDecorator
-class User {
-  constructor(private name: string, private age: number, private job: string) {}
-}
-
 class Carro {
   @decorator1()
   @decorator2()
@@ -63,7 +52,5 @@ class Carro {
   }
 }
 
-// const c1 = new Carro();
-// c1.vrum();
-
-const u1 = new User("Luke", 54, "developer");
+const c1 = new Carro();
+c1.vrum();
